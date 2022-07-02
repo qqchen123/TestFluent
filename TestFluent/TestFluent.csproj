@@ -167,13 +167,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Manager\CateManager.cs" />
     <Compile Include="Manager\ProjectInfoManager.cs" />
+    <Compile Include="Mapping\CateMap.cs" />
     <Compile Include="Mapping\ProjectInfoMap.cs" />
+    <Compile Include="Models\Cate.cs" />
     <Compile Include="Models\ProjectInfo.cs" />
     <Compile Include="NHibernateHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -223,6 +227,7 @@
     <Content Include="Views\ProjectInfo\Index.cshtml" />
     <Content Include="Views\ProjectInfo\Details.cshtml" />
     <Content Include="Views\ProjectInfo\Create.cshtml" />
+    <Content Include="Views\Cate\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

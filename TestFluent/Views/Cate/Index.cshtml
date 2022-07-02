@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered table-condensed table-hover table-responsive table">
+    <tr>
+        <td>cateId</td>
+        <td>cateName</td>
+        <td>tableInfo</td>
+        <td>parentId</td>
+        <td>isDelete</td>
+        <td>createTime</td>
+        <td>updateTime</td>
+        <td>Operate</td>
+    </tr>
+
+    @foreach (var item in ViewBag.cateList)
+    {
+<tr>
+    <td>@item.CateId</td>
+    <td>@item.CateName</td>
+    <td>@item.TableInfo</td>
+    <td>@item.ParentId</td>
+    <td>@item.IsDelete</td>
+    <td>@item.CreateTime</td>
+    <td>@item.UpdateTime</td>
+    <td>
+        <a href="Details/@item.CateId">详情</a>
+        <a href="Delete/@item.CateId">删除</a>
+    </td>
+</tr>
+    }
+</table>

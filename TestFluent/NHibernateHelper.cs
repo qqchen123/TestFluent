@@ -35,6 +35,7 @@ namespace TestFluent
                      .Driver<NHibernate.Driver.OracleManagedDataClientDriver>()
                  )
                 .Mappings(m => m.FluentMappings.AddFromAssembly(typeof(ProjectInfo).Assembly))
+                .Mappings(m => m.FluentMappings.AddFromAssembly(typeof(Cate).Assembly))
                 .BuildSessionFactory();
         }
         
