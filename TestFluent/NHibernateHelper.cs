@@ -28,7 +28,8 @@ namespace TestFluent
             string connectionString = "User ID=wateruser;Password=itcast;Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.80.10)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = orcl)))";
             _sessionFactory = Fluently.Configure()
                 .Database(
-                     OracleClientConfiguration.Oracle10
+                     OracleManagedDataClientConfiguration.Oracle10 
+                     //OracleClientConfiguration.Oracle10
                      .ConnectionString(connectionString)
                      .Provider<NHibernate.Connection.DriverConnectionProvider>()
                      .Driver<NHibernate.Driver.OracleManagedDataClientDriver>()

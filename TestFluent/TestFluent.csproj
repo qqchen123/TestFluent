@@ -222,6 +222,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ProjectInfo\Index.cshtml" />
     <Content Include="Views\ProjectInfo\Details.cshtml" />
+    <Content Include="Views\ProjectInfo\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

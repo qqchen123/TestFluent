@@ -10,11 +10,14 @@ namespace TestFluent.Controllers
 {
     public class ProjectInfoController : Controller
     {
+        ProjectInfoManager projectInfoManager;
+        public ProjectInfoController() { 
+            this.projectInfoManager = new ProjectInfoManager();
+        }
         // GET: ProjectInfo
         public ActionResult Index()
         {
-            ProjectInfoManager projectInfoManager = new ProjectInfoManager();
-            IList<ProjectInfo> projectInfoList =  projectInfoManager.GetAllProjectInfo();
+            IList<ProjectInfo> projectInfoList = this.projectInfoManager.GetAllProjectInfo();
             ViewBag.projectInfoList = projectInfoList;
             return View();
         }
@@ -22,8 +25,7 @@ namespace TestFluent.Controllers
         // GET: ProjectInfo/Details/5
         public ActionResult Details(int id)
         {
-            ProjectInfoManager projectInfoManager = new ProjectInfoManager();
-            var projectInfo = projectInfoManager.GetProjectByProjectName(id);
+            var projectInfo = this.projectInfoManager.GetProjectByProjectName(id);
             ViewBag.projectInfo = projectInfo;
             return View();
         }
