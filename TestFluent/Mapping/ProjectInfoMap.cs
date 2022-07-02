@@ -10,7 +10,7 @@ namespace TestFluent.Mapping
     public class ProjectInfoMap:ClassMap<ProjectInfo>
     {
         public ProjectInfoMap() {
-            Id(x=>x.ProId).Column("PRO_ID");
+            Id(x=>x.ProId).Column("PRO_ID").GeneratedBy.Sequence("SEQ_TDMS_PROCEDURE_INFO");
             Map(x=>x.ProjectName).Column("PROJECT_NAME");
             Map(x=>x.Pmo).Column("PMO");
             Map(x=>x.Sponsor).Column("SPONSOR");

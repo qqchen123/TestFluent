@@ -20,5 +20,21 @@ namespace TestFluent.Manager
                 }
             }
         }
+
+        /// <summary>
+        /// 保存cate数据
+        /// </summary>
+        /// <param name="cate"></param>
+        public void SaveCate(Cate cate)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.Save(cate);
+                    transaction.Commit();
+                }
+            }
+        }
     }
 }

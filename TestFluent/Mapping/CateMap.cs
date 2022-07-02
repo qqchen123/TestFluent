@@ -11,7 +11,7 @@ namespace TestFluent.Mapping
     {
         public CateMap()
         {
-            Id(x => x.CateId).Column("CATE_ID");
+            Id(x => x.CateId).Column("CATE_ID").GeneratedBy.Sequence("SEQ_TDMS_PROCEDURE_CATE");
             Map(x => x.CateName).Column("CATE_NAME");
             Map(x => x.TableInfo).Column("TABLE_INFO");
             Map(x => x.ParentId).Column("PARENT_ID");
