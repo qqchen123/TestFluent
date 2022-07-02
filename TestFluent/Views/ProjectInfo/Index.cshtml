@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+
+
+
+<table class="table table-bordered table-condensed table-hover table-responsive table">
+    <tr>
+        <td>ProId</td>
+        <td>ProjectName</td>
+        <td>Pmo</td>
+        <td>Operate</td>
+    </tr>
+    @foreach (var item in ViewBag.projectInfoList)
+    {
+<tr>
+    <td>@item.ProId</td>
+    <td>@item.ProjectName</td>
+    <td>@item.Pmo</td>
+    <td>
+        <a href="Details/@item.ProId">详情</a>
+        <a href="Delete/@item.ProId">删除</a>
+    </td>
+</tr>
+    }
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
