@@ -7,6 +7,7 @@ using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using TestFluent.Models;
 using FluentNHibernate.Automapping;
+using System.Configuration;
 
 namespace TestFluent
 {
@@ -24,8 +25,10 @@ namespace TestFluent
                 return _sessionFactory;
             }
         }
-        private static void InitializeSessionFactory() {
-            string connectionString = "User ID=wateruser;Password=itcast;Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.80.10)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = orcl)))";
+        private static void InitializeSessionFactory()
+        {
+            //string connectionString = "User ID=wateruser;Password=itcast;Data Source=(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.80.10)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = orcl)))";
+            string connectionString = ConfigurationManager.ConnectionStrings["OracleConnstr"].ConnectionString; // ConfigurationManager.AppSettings["OracleConnstr"];
             _sessionFactory = Fluently.Configure()
                 .Database(
                      OracleManagedDataClientConfiguration.Oracle10 

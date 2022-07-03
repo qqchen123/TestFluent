@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "Index";
 }
+
+@using TestFluent.Models;
 <h2>Index</h2>
 
 
@@ -13,7 +15,7 @@
         <td>Pmo</td>
         <td>Operate</td>
     </tr>
-    @foreach (var item in ViewBag.projectInfoList)
+    @foreach (ProjectInfo item in ViewBag.projectInfoList as List<ProjectInfo>)
     {
         <tr>
             <td>@item.ProId</td>
