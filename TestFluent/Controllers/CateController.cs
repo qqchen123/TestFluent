@@ -11,7 +11,8 @@ namespace TestFluent.Controllers
     public class CateController : Controller
     {
         CateManager cateManager;
-        public CateController() {
+        public CateController()
+        {
             this.cateManager = new CateManager();
         }
         // GET: Cate

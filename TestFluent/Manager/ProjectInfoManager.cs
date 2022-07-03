@@ -12,7 +12,8 @@ namespace TestFluent.Manager
         /// 获取全部项目信息
         /// </summary>
         /// <returns></returns>
-        public IList<ProjectInfo> GetAllProjectInfo() {
+        public IList<ProjectInfo> GetAllProjectInfo()
+        {
             using (var session = NHibernateHelper.OpenSession())
             {
                 using (var transaction = session.BeginTransaction())
@@ -29,12 +30,13 @@ namespace TestFluent.Manager
         /// </summary>
         /// <param name="projectName"></param>
         /// <returns></returns>
-        public IList<ProjectInfo> GetProjectByProjectName(string projectName) {
+        public IList<ProjectInfo> GetProjectByProjectName(string projectName)
+        {
             using (var session = NHibernateHelper.OpenSession())
             {
                 using (var transaction = session.BeginTransaction())
                 {
-                    var projectInfoList = session.QueryOver<ProjectInfo>().Where(x=>x.ProjectName==projectName);
+                    var projectInfoList = session.QueryOver<ProjectInfo>().Where(x => x.ProjectName == projectName);
                     transaction.Commit();
                     return projectInfoList.List();
                 }
@@ -63,7 +65,8 @@ namespace TestFluent.Manager
         /// 保存项目信息
         /// </summary>
         /// <param name="projectInfo"></param>
-        public void SaveProjectInfo(ProjectInfo projectInfo) {
+        public void SaveProjectInfo(ProjectInfo projectInfo)
+        {
             using (var session = NHibernateHelper.OpenSession())
             {
                 using (var transaction = session.BeginTransaction())
@@ -78,7 +81,8 @@ namespace TestFluent.Manager
         /// 根据id删除项目信息
         /// </summary>
         /// <param name="id"></param>
-        public void DeleteById(int id) {
+        public void DeleteById(int id)
+        {
             using (var session = NHibernateHelper.OpenSession())
             {
                 using (var transaction = session.BeginTransaction())
@@ -95,7 +99,8 @@ namespace TestFluent.Manager
         /// 修改项目数据
         /// </summary>
         /// <param name="projectInfo"></param>
-        public void UpdateUser(ProjectInfo projectInfo) {
+        public void UpdateUser(ProjectInfo projectInfo)
+        {
             using (var session = NHibernateHelper.OpenSession())
             {
                 using (var transaction = session.BeginTransaction())

@@ -15,15 +15,15 @@
     </tr>
     @foreach (var item in ViewBag.projectInfoList)
     {
-<tr>
-    <td>@item.ProId</td>
-    <td>@item.ProjectName</td>
-    <td>@item.Pmo</td>
-    <td>
-        <a href="Details/@item.ProId">详情</a>
-        <a href="Delete/@item.ProId">删除</a>
-    </td>
-</tr>
+        <tr>
+            <td>@item.ProId</td>
+            <td>@item.ProjectName</td>
+            <td>@item.Pmo</td>
+            <td>
+                <a href="Details/@item.ProId">详情</a>
+                <a href="Delete/@item.ProId">删除</a>
+            </td>
+        </tr>
     }
 </table>
 

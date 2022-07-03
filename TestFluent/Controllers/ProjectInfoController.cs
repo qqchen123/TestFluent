@@ -11,7 +11,8 @@ namespace TestFluent.Controllers
     public class ProjectInfoController : Controller
     {
         ProjectInfoManager projectInfoManager;
-        public ProjectInfoController() { 
+        public ProjectInfoController()
+        {
             this.projectInfoManager = new ProjectInfoManager();
         }
         // GET: ProjectInfo

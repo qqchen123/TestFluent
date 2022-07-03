@@ -13,7 +13,7 @@ namespace TestFluent.Controllers
         {
             using (var session = NHibernateHelper.OpenSession())
             {
-                using (var transaction=session.BeginTransaction())
+                using (var transaction = session.BeginTransaction())
                 {
                     var projectInfo = session.QueryOver<ProjectInfo>();
                     transaction.Commit();

@@ -7,7 +7,7 @@ using TestFluent.Models;
 
 namespace TestFluent.Mapping
 {
-    public class CateMap:ClassMap<Cate>
+    public class CateMap : ClassMap<Cate>
     {
         public CateMap()
         {
