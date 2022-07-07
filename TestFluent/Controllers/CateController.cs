@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TDMS.Interface;
 using TestFluent.Manager;
 using TestFluent.Models;
+using TestFluent.Utility;
+using Unity;
 
 namespace TestFluent.Controllers
 {
@@ -15,6 +18,14 @@ namespace TestFluent.Controllers
         {
             this.cateManager = new CateManager();
         }
+
+        public ActionResult Test() {
+            IUnityContainer container = MyDIFactory.getContainer();
+            IProjectInfoService project = container.Resolve<IProjectInfoService>();
+            string proRes = project.DoMyTest();
+            return Content(proRes);
+        }
+
         // GET: Cate
         public ActionResult Index()
         {
