@@ -11,17 +11,29 @@ namespace TDMS.Service
 {
     public class ProjectInfoService : IProjectInfoService
     {
+        CateManager cateManager = null;
+        public ProjectInfoService() {
+            this.cateManager = new CateManager();
+        }
+
         public string DoMyTest()
         {
-            CateManager cateManager = new CateManager();
-            var proRes = cateManager.GetProduct();
+            var proRes = this.cateManager.GetProduct();
             return "this is a test function ";
         }
 
         public IList<Cate> GetAllCate()
         {
-            CateManager cateManager = new CateManager();
-            return cateManager.GetAllCate();
+            return this.cateManager.GetAllCate();
+        }
+
+        /// <summary>
+        /// 关联查询----获取产品和订单信息
+        /// </summary>
+        /// <returns></returns>
+        public IList<Product> getAllProduct()
+        {
+            return this.cateManager.GetProduct();
         }
 
         public void SaveCate(Cate cate)

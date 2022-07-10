@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered table-condensed table-hover table-responsive table">
+    <tr>
+        <td>cateId</td>
+        <td>cateName</td>
+        <td>tableInfo</td>
+        <td>tableInfo</td>
+        <td>tableInfo</td>
+    </tr>
+
+    @foreach (var item in ViewBag.Product)
+    {
+<tr>
+    <td>@item.ProductId</td>
+    <td>@item.Name</td>
+    <td>@item.Cost</td>
+    @*<td>@item.Orders[0].OrderId</td>
+        <td>@item.Orders[0].OrderDate</td>*@
+    @foreach (var item2 in item.Orders)
+    {
+        <td>@item2.OrderId</td>
+        <td>@item2.OrderDate</td>
+    }
+</tr>
+    }
+</table>

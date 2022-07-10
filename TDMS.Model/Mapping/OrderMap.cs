@@ -14,7 +14,11 @@ namespace TDMS.Model.Mapping
         {
             Id(x => x.OrderId).Column("ORDERID").GeneratedBy.Sequence("SEQ_SHOP_ORDERID");
             Map(x => x.OrderDate).Column("ORDERDATE");
-            HasManyToMany<Product>(m=>m.Products).ParentKeyColumn("ORDERID").ChildKeyColumn("PRODUCTID").Table("SHOP_ORDERPRODUCT");
+            HasManyToMany<Product>(m=>m.Products)
+                .ParentKeyColumn("ORDERID")
+                .ChildKeyColumn("PRODUCTID")
+                .Table("SHOP_ORDERPRODUCT")
+                .Not.LazyLoad();
             Table("SHOP_ORDER");
         }
     }

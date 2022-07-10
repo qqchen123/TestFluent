@@ -12,5 +12,7 @@ namespace TDMS.Interface
          string DoMyTest();
          IList<Cate> GetAllCate();
         void SaveCate(Cate cate);
+
+        IList<Product> getAllProduct();
     }
 }
