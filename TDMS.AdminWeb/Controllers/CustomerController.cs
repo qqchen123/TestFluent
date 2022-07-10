@@ -18,5 +18,13 @@ namespace TDMS.AdminWeb.Controllers
             ViewBag.customerInfo = customerInfo;
             return View();
         }
+
+        public ActionResult IndexOneToOne()
+        {
+            IProjectInfoService infoService = new ProjectInfoService();
+            var customerInfo = infoService.GetCustomerOneToOne();
+            ViewBag.customerInfo = customerInfo;
+            return View();
+        }
     }
 }

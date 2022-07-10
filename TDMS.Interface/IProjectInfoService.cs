@@ -16,5 +16,6 @@ namespace TDMS.Interface
         IList<Product> getAllProduct();
 
         Customer GetCustomer();
+        Customer GetCustomerOneToOne();
     }
 }

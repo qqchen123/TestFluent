@@ -12,5 +12,7 @@ namespace TDMS.Model.Models
         public virtual string FirstName { get; set; }
         public virtual string LastName { get; set; }
         public virtual ISet<Order> Orders { get; set; }
+
+        public virtual CustomerDetail CustomerDetail { get; set; }
     }
 }

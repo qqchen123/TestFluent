@@ -15,6 +15,10 @@ namespace TDMS.Model.Mapping
             Id(x => x.CustomerId).Column("CUSTOMERID").GeneratedBy.Sequence("SEQ_SHOP_CUSTOMERID");
             Map(x => x.FirstName).Column("FIRSTNAME");
             Map(x => x.LastName).Column("LASTNAME");
+            HasOne(x => x.CustomerDetail)
+                .Cascade.All()
+                .PropertyRef("CUSTOMERID");
+
             HasMany<Order>(x => x.Orders)
                 .Not.LazyLoad()
                 .Cascade.All()
