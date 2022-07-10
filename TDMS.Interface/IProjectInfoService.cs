@@ -14,5 +14,7 @@ namespace TDMS.Interface
         void SaveCate(Cate cate);
 
         IList<Product> getAllProduct();
+
+        Customer GetCustomer();
     }
 }

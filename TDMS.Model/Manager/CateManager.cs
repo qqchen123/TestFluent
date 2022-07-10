@@ -35,6 +35,18 @@ namespace TDMS.Model.Manager
             }
         }
 
+        public Customer GetCustomer() 
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var customerRes = session.Get<Customer>(1001);
+                    return customerRes;
+                }
+            }
+        }
+
         /// <summary>
         /// 保存cate数据
         /// </summary>

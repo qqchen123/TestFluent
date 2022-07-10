@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h2>@ViewBag.customerInfo.CustomerId--@ViewBag.customerInfo.FirstName--@ViewBag.customerInfo.LastName</h2>
+<ul>
+    @foreach (var item in ViewBag.customerInfo.Orders)
+    {
+    <li>@item.OrderId -- @item.OrderDate</li>
+    }
+    </ul>
+
+
+

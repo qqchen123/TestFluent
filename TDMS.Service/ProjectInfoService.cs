@@ -36,6 +36,11 @@ namespace TDMS.Service
             return this.cateManager.GetProduct();
         }
 
+        public Customer GetCustomer()
+        {
+            return this.cateManager.GetCustomer();
+        }
+
         public void SaveCate(Cate cate)
         {
             CateManager cateManager = new CateManager();

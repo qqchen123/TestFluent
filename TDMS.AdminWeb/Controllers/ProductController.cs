@@ -28,5 +28,7 @@ namespace TDMS.AdminWeb.Controllers
             ViewBag.Product = ProductRes;
             return View();
         }
+
+
     }
 }
