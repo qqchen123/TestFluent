@@ -31,7 +31,7 @@ namespace TDMS.Model
             //string connectionString = ConfigurationManager.ConnectionStrings["OracleConnstr"].ConnectionString; // ConfigurationManager.AppSettings["OracleConnstr"];
             _sessionFactory = Fluently.Configure()
                 .Database(
-                     OracleManagedDataClientConfiguration.Oracle10 
+                     OracleManagedDataClientConfiguration.Oracle10
                      //OracleClientConfiguration.Oracle10
                      .ConnectionString(connectionString)
                      .Provider<NHibernate.Connection.DriverConnectionProvider>()

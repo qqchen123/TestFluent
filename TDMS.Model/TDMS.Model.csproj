@@ -101,8 +101,14 @@
     <Compile Include="Manager\CateManager.cs" />
     <Compile Include="Manager\ProjectInfoManager.cs" />
     <Compile Include="Mapping\CateMap.cs" />
+    <Compile Include="Mapping\ProductMap.cs" />
+    <Compile Include="Mapping\OrderMap.cs" />
+    <Compile Include="Mapping\CustomerMap.cs" />
     <Compile Include="Mapping\ProjectInfoMap.cs" />
     <Compile Include="Models\Cate.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProjectInfo.cs" />
     <Compile Include="NHibernateHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -29,9 +29,32 @@ namespace TestFluent.Controllers
         // GET: Cate
         public ActionResult Index()
         {
+           var  CurrentUser1 = System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString();
+            string[] Cuser1 = CurrentUser1.Split('\\');
             IList<Cate> cateList = this.cateManager.GetAllCate();
-            ViewBag.cateList = cateList;
+            var myCate = cateList.Where(r => r.CateId > 100);
+            ViewBag.cateList = myCate;
+            //IList<Cate> cateList = this.cateManager.GetAllCateByLike("2");
+            //ViewBag.cateList = cateList;
             return View();
+        }
+
+        // GET: Cate
+        public ActionResult CateEq()
+        {
+            //IList<Cate> cateList = this.cateManager.GetAllCate();
+            //ViewBag.cateList = cateList;
+            IList<Cate> cateList = this.cateManager.GetAllCateByEq("T2");
+            return Content(cateList.ToString());
+        }
+
+        // GET: Cate
+        public ActionResult CateQO()
+        {
+            //IList<Cate> cateList = this.cateManager.GetAllCate();
+            //ViewBag.cateList = cateList;
+            IList<Cate> cateList = this.cateManager.GetAllCateByQueryOver("T2");
+            return Content(cateList.ToString());
         }
 
         public ActionResult Create()

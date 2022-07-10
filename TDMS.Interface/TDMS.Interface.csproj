@@ -44,5 +44,11 @@
     <Compile Include="IProjectInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TDMS.Model\TDMS.Model.csproj">
+      <Project>{64e5b4f6-dafc-413a-a9e2-519693c72f92}</Project>
+      <Name>TDMS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

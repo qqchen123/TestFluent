@@ -11,15 +11,25 @@ namespace TestFluent.Controllers
     {
         public ActionResult Index()
         {
-            using (var session = NHibernateHelper.OpenSession())
-            {
-                using (var transaction = session.BeginTransaction())
-                {
-                    var projectInfo = session.QueryOver<ProjectInfo>();
-                    transaction.Commit();
-                    var proList = projectInfo.List();
-                }
-            }
+            //using (var session = NHibernateHelper.OpenSession())
+            //{
+            //    using (var transaction = session.BeginTransaction())
+            //    {
+            //        var projectInfo = session.QueryOver<ProjectInfo>();
+            //        transaction.Commit();
+            //        var proList = projectInfo.List();
+            //    }
+            //}
+
+            //using (var session = NHibernateHelper.OpenSession())
+            //{
+            //    using (var transaction = session.BeginTransaction())
+            //    {
+            //        var projectInfo = session.QueryOver<Product>();
+            //        transaction.Commit();
+            //        var proList = projectInfo.List();
+            //    }
+            //}
             return View();
         }
 

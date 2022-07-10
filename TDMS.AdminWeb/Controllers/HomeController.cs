@@ -13,6 +13,7 @@ namespace TDMS.AdminWeb.Controllers
         public ActionResult Index()
         {
             IProjectInfoService infoService = new ProjectInfoService();
+            //infoService.GetAllCate();
             string info = infoService.DoMyTest();
             return View();
         }

@@ -14,8 +14,20 @@ namespace TDMS.Service
         public string DoMyTest()
         {
             CateManager cateManager = new CateManager();
-            IList<Cate> cateList = cateManager.GetAllCate();
+            var proRes = cateManager.GetProduct();
             return "this is a test function ";
+        }
+
+        public IList<Cate> GetAllCate()
+        {
+            CateManager cateManager = new CateManager();
+            return cateManager.GetAllCate();
+        }
+
+        public void SaveCate(Cate cate)
+        {
+            CateManager cateManager = new CateManager();
+            cateManager.SaveCate(cate);
         }
     }
 }

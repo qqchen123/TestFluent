@@ -21,6 +21,20 @@ namespace TDMS.Model.Manager
             }
         }
 
+
+        public IList<Product> GetProduct()
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var productRes = session.CreateCriteria<Product>().List<Product>();
+                    transaction.Commit();
+                    return productRes;
+                }
+            }
+        }
+
         /// <summary>
         /// 保存cate数据
         /// </summary>
@@ -36,5 +50,7 @@ namespace TDMS.Model.Manager
                 }
             }
         }
+
+        
     }
 }
